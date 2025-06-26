@@ -2,7 +2,7 @@ import DefaultLayout from "@/layouts/default";
 import AccordionSlider from "@/shared/AccordionSlider";
 import AccordionMobile from "@/shared/AccordionMobile";
 import { useServices } from "@/hooks/useServices";
-import { Spinner } from "@heroui/Spinner";
+import { Spinner } from "@heroui/spinner";
 
 export default function IndexPage() {
   const { data, isLoading, isError } = useServices();
