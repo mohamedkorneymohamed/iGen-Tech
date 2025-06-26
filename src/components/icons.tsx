@@ -191,15 +191,16 @@ export const LabelIcon = ({ color, ...props }: IconSvgProps & { color?: string }
   </svg>
 );
 
-export const LeftArrowIcon = (props: IconSvgProps) => (
+export const LeftArrowIcon = ({ color, ...props }: IconSvgProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    fill={"none"}
+    fill="none"
     viewBox="0 0 24 24"
     strokeWidth="1.5"
     stroke="currentColor"
-    className="w-4 h-4 "
-    color={props.color}
+    className="w-4 h-4"
+    color={color} 
+    {...props} 
   >
     <path
       strokeLinecap="round"
@@ -209,7 +210,7 @@ export const LeftArrowIcon = (props: IconSvgProps) => (
   </svg>
 );
 
-export const RightArrowIcon = (props: IconSvgProps) => (
+export const RightArrowIcon = ({ color, ...props }: IconSvgProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
@@ -217,12 +218,13 @@ export const RightArrowIcon = (props: IconSvgProps) => (
     strokeWidth="1.5"
     stroke="currentColor"
     className="w-4 h-4"
-    color={props.color}
+    color={color} 
+    {...props} 
   >
     <path
       strokeLinecap="round"
       strokeLinejoin="round"
-      d="M8.25 4.5l7.5 7.5-7.5 7.5" 
+      d="M8.25 4.5l7.5 7.5-7.5 7.5"
     />
   </svg>
 );
