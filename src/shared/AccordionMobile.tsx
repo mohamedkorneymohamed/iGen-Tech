@@ -1,44 +1,8 @@
 import React, { useState } from "react";
 import { Button } from "@heroui/button";
 import { LabelIcon } from "@/components/icons";
+import panels from "@/data/panel.json";
 
-const panels = [
-    {
-        label: "Software Solutions Experts",
-        title: "Custom-Built Software To Power Your Business",
-        description:
-            "Lorem ipsum dolor sit amet consectetur. Quis sit quis in nulla eget fringilla tempus elit proin. Leo nunc convallis sit molestie nisi at magna. Nullam et amet lectus consectetur.",
-        color: "#CCF5FF",
-    },
-    {
-        label: "eKYC",
-        title: "AI-driven eKYC solution verifies users in seconds",
-        description:
-            "Lorem ipsum dolor sit amet consectetur. Quis sit quis in nulla eget fringilla tempus elit proin. Leo nunc convallis sit molestie nisi at magna. Nullam et amet lectus consectetur.",
-        color: "#DBF5FF",
-    },
-    {
-        label: "Payment Links",
-        title: "Payment Links",
-        description:
-            "Lorem ipsum dolor sit amet consectetur. Quis sit quis in nulla eget fringilla tempus elit proin. Leo nunc convallis sit molestie nisi at magna. Nullam et amet lectus consectetur.",
-        color: "#E5F8FF",
-    },
-    {
-        label: "Invoicing",
-        title: "Invoicing",
-        description:
-            "Lorem ipsum dolor sit amet consectetur. Quis sit quis in nulla eget fringilla tempus elit proin. Leo nunc convallis sit molestie nisi at magna. Nullam et amet lectus consectetur.",
-        color: "#F0FBFF",
-    },
-    {
-        label: "Consultancy",
-        title: "Consultancy",
-        description:
-            "Lorem ipsum dolor sit amet consectetur. Quis sit quis in nulla eget fringilla tempus elit proin. Leo nunc convallis sit molestie nisi at magna. Nullam et amet lectus consectetur.",
-        color: "#F5FCFF",
-    },
-];
 
 const AccordionMobile: React.FC = () => {
     const [active, setActive] = useState(0);
@@ -70,7 +34,7 @@ const AccordionMobile: React.FC = () => {
                             <div className="flex flex-col justify-between h-full w-full">
                                 <div>
                                     <div className="text-[16px] text-[#212C66] font-regular mb-4 flex items-center gap-2 ">
-                                        <LabelIcon/>
+                                        <LabelIcon />
                                         {panel.label}
                                     </div>
                                     <h2 className="text-[24px] font-bold mb-4 leading-[1.4] text-[#212C66]">
@@ -81,7 +45,7 @@ const AccordionMobile: React.FC = () => {
                                     </p>
                                 </div>
                                 <Button className="bg-[#212C66] text-white rounded-full px-[24px] py-[11px] font-semibold w-full">
-                                            Learn More
+                                    Learn More
                                 </Button>
                             </div>
                         ) : (

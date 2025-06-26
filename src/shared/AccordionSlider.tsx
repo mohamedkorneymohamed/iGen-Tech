@@ -2,44 +2,8 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@heroui/button";
 import { LabelIcon, LeftArrowIcon, RightArrowIcon } from "@/components/icons";
+import panels from "@/data/panel.json";
 
-const panels = [
-    {
-        label: "Software Solutions Experts",
-        title: "Custom-Built Software To Power Your Business",
-        description:
-            "Lorem ipsum dolor sit amet consectetur. Quis sit quis in nulla eget fringilla tempus elit proin. Leo nunc convallis sit molestie nisi at magna. Nullam et amet lectus consectetur.",
-        color: "#CCF5FF",
-    },
-    {
-        label: "eKYC",
-        title: "AI-driven eKYC solution verifies users in seconds",
-        description:
-            "Lorem ipsum dolor sit amet consectetur. Quis sit quis in nulla eget fringilla tempus elit proin. Leo nunc convallis sit molestie nisi at magna. Nullam et amet lectus consectetur.",
-        color: "#DBF5FF",
-    },
-    {
-        label: "Payment Links",
-        title: "Payment Links",
-        description:
-            "Lorem ipsum dolor sit amet consectetur. Quis sit quis in nulla eget fringilla tempus elit proin. Leo nunc convallis sit molestie nisi at magna. Nullam et amet lectus consectetur.",
-        color: "#E5F8FF",
-    },
-    {
-        label: "Invoicing",
-        title: "Invoicing",
-        description:
-            "Lorem ipsum dolor sit amet consectetur. Quis sit quis in nulla eget fringilla tempus elit proin. Leo nunc convallis sit molestie nisi at magna. Nullam et amet lectus consectetur.",
-        color: "#F0FBFF",
-    },
-    {
-        label: "Consultancy",
-        title: "Consultancy",
-        description:
-            "Lorem ipsum dolor sit amet consectetur. Quis sit quis in nulla eget fringilla tempus elit proin. Leo nunc convallis sit molestie nisi at magna. Nullam et amet lectus consectetur.",
-        color: "#F5FCFF",
-    },
-];
 
 export const AccordionSlider: React.FC = () => {
     const [active, setActive] = useState(0);
