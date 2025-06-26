@@ -1,16 +1,10 @@
-import { Link } from "@heroui/link";
 import {
   Navbar as HeroUINavbar,
   NavbarContent,
   NavbarItem,
-  NavbarMenuToggle,
 } from "@heroui/navbar";
 
-import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
-import {
-  GithubIcon,
-} from "@/components/icons";
 
 export const Navbar = () => {
 
@@ -25,11 +19,7 @@ export const Navbar = () => {
         </NavbarItem>
       </NavbarContent>
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-        <Link isExternal href={siteConfig.links.github}>
-          <GithubIcon className="text-default-500" />
-        </Link>
         <ThemeSwitch />
-        <NavbarMenuToggle />
       </NavbarContent>
 
     </HeroUINavbar>

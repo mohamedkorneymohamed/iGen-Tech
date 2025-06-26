@@ -104,7 +104,7 @@ export const AccordionSlider: React.FC = () => {
                                                     {panel.description}
                                                 </p>
                                             </div>
-                                            <Button className="bg-blue-900 text-white rounded-full px-6 py-2 font-semibold w-fit">
+                                            <Button className="bg-blue-900 text-white text-[18px] rounded-full px-[24px] py-[11px] font-semibold w-fit">
                                                 Learn More
                                             </Button>
                                         </motion.div>
