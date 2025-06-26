@@ -1,51 +1,14 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Button } from "@heroui/button";
 import { LabelIcon } from "@/components/icons";
+import { Service } from "@/types";
 
-const panels = [
-    {
-        label: "Software Solutions Experts",
-        title: "Custom-Built Software To Power Your Business",
-        description:
-            "Lorem ipsum dolor sit amet consectetur. Quis sit quis in nulla eget fringilla tempus elit proin. Leo nunc convallis sit molestie nisi at magna. Nullam et amet lectus consectetur.",
-        color: "#CCF5FF",
-    },
-    {
-        label: "eKYC",
-        title: "AI-driven eKYC solution verifies users in seconds",
-        description:
-            "Lorem ipsum dolor sit amet consectetur. Quis sit quis in nulla eget fringilla tempus elit proin. Leo nunc convallis sit molestie nisi at magna. Nullam et amet lectus consectetur.",
-        color: "#DBF5FF",
-    },
-    {
-        label: "Payment Links",
-        title: "Payment Links",
-        description:
-            "Lorem ipsum dolor sit amet consectetur. Quis sit quis in nulla eget fringilla tempus elit proin. Leo nunc convallis sit molestie nisi at magna. Nullam et amet lectus consectetur.",
-        color: "#E5F8FF",
-    },
-    {
-        label: "Invoicing",
-        title: "Invoicing",
-        description:
-            "Lorem ipsum dolor sit amet consectetur. Quis sit quis in nulla eget fringilla tempus elit proin. Leo nunc convallis sit molestie nisi at magna. Nullam et amet lectus consectetur.",
-        color: "#F0FBFF",
-    },
-    {
-        label: "Consultancy",
-        title: "Consultancy",
-        description:
-            "Lorem ipsum dolor sit amet consectetur. Quis sit quis in nulla eget fringilla tempus elit proin. Leo nunc convallis sit molestie nisi at magna. Nullam et amet lectus consectetur.",
-        color: "#F5FCFF",
-    },
-];
-
-const AccordionMobile: React.FC = () => {
+const AccordionMobile = ({ services }: { services: Service[] }) => {
     const [active, setActive] = useState(0);
-
+    
     return (
         <div className="w-full flex flex-col items-center gap-2 overflow-x-auto  h-screen justify-center" style={{ minHeight: 339 }}>
-            {panels.map((panel, idx) => {
+            {services?.map((service, idx) => {
                 const distance = Math.abs(idx - active);
                 let width = 220;
                 if (distance === 0) width = 350;
@@ -54,10 +17,10 @@ const AccordionMobile: React.FC = () => {
                 else if (distance === 3) width = 250;
                 return (
                     <div
-                        key={panel.label}
+                        key={service.service_title}
                         className={`transition-all duration-500 flex flex-col items-center justify-center rounded-[24px] shadow-md cursor-pointer overflow-hidden`}
                         style={{
-                            background: panel.color,
+                            background: service.service_color,
                             minWidth: width,
                             maxWidth: width,
                             zIndex: idx === active ? 10 : 1,
@@ -71,13 +34,12 @@ const AccordionMobile: React.FC = () => {
                                 <div>
                                     <div className="text-[16px] text-[#212C66] font-regular mb-4 flex items-center gap-2 ">
                                         <LabelIcon/>
-                                        {panel.label}
+                                        {service.service_title}
                                     </div>
                                     <h2 className="text-[24px] font-bold mb-4 leading-[1.4] text-[#212C66]">
-                                        {panel.title}
+                                        {service.service_title}
                                     </h2>
-                                    <p className="text-sm font-regular leading-[1.6] text-[#212C66] mb-4">
-                                        {panel.description}
+                                    <p dangerouslySetInnerHTML={{ __html: service.service_description }} className="text-sm font-regular leading-[1.6] text-[#212C66] mb-4">
                                     </p>
                                 </div>
                                 <Button className="bg-[#212C66] text-white rounded-full px-[24px] py-[11px] font-semibold w-full">
@@ -92,7 +54,7 @@ const AccordionMobile: React.FC = () => {
                                     width: '100%',
                                 }}
                             >
-                                {panel.label}
+                                    {service.service_title}
                             </span>
                         )}
                     </div>
